@@ -1,0 +1,253 @@
+\documentclass[12pt,oneside]{book}
+
+% packages
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{bm}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{amssymb}
+\usepackage{cases}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% these make top, right, bottom margins about 1"
+% and the left margin about 1.5"
+\setlength{\textwidth}{5.75in}
+\setlength{\oddsidemargin}{0.5in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textheight}{9.0in}
+\setlength{\topmargin}{0.0in}
+%\usepackage[top=1in, bottom=1in, left=1.5 in, right=1 in]{geometry}
+
+% this makes the chapters start with a 2" margin
+\makeatletter
+\renewcommand*\@makechapterhead[1]{%
+  \vspace*{0.75in}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \huge\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\renewcommand*\@makeschapterhead[1]{%
+  \vspace*{0.75in}%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+
+
+
+
+% The next lines are personal shortcuts and settings.  Feel free
+% to delete those you don't want.
+
+%  theorems, corollaries, etc.
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{example}[thm]{Example}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{exercise}[thm]{Exercise}
+
+% QED symbol is a filled box, instead of unfilled box
+\renewcommand{\qedsymbol}{\vrule height 5pt width 4pt depth -1pt} 
+
+% text shortcuts
+\def\ie{{i.e.,}\ }
+\def\eg{{e.g.,}\ }
+\def\bbar#1{\overline{#1}}
+\def\bigskip{\vspace{30pt}}
+
+% math symbol shortcuts
+\newcommand{\nor}{\trianglelefteq} % \nor = normal subgroup symbol
+\newcommand{\snor}{\triangleleft} % \snor = proper normal subgroup
+\newcommand{\cross}{^{\times}} % \cross = direct product
+\newcommand{\iso}{\cong} % \iso = isomorphic symbol
+\newcommand{\divides}{\bigm |} % \divides = divides symbol
+\def\ord#1{\vert #1 \vert} % \ord G = |G|
+\def\ind#1#2{\vert #1\, :\,#2\vert}
+\def\gcd#1#2{\textrm{gcd}(#1, #2)}
+\def\deg{\textrm{deg}}
+
+%  group shortcuts
+% \Aut {G} = Aut G, etc.
+\def\Aut#1{\textrm{Aut } #1} 
+\def\Out#1{\textrm{Out } #1}
+\def\Inn#1{\textrm{Inn } #1}
+\def\Hom{\textrm{Hom}}
+\def\Fit#1{\textrm{Fit } #1}
+\def\Z#1{\textrm{Z}(#1)}
+
+\def\syl#1{Syl_{#1} (G)}
+\def\sltwo#1{\textrm{SL}_2(#1)}
+\def\gltwo#1{\textrm{GL}_2(#1)}
+\def\gl#1#2{\textrm{GL}_{#1}(#2)}
+\def\psl#1#2{\textrm{PSL}_{#1}(#2)}
+
+%  set shortcuts: blackboard bold commands
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\OO}{\mathbb{O}}
+
+% logic shortcuts
+\renewcommand{\iff}{\Leftrightarrow}
+
+\newcommand{\newheading}[1]
+{ \begin{center} {\large \bf #1} \end{center} \vspace{0.5in} }
+\newcommand{\newchapter}[2] { \newpage \chapter{#1} \label{chap:#2} \input{#2} }
+\newcommand{\tab}{\phantom{o}\hspace{2ex}}
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+
+% doesn't count introduction when numbering theorems, etc.
+\setcounter{chapter}{0}
+
+% makes page numbers appear
+\pagestyle{plain} 
+
+
+\begin{document}
+
+% makes the page numbers roman numerals, doesn't count
+% these pages in the table of contents
+\frontmatter
+
+\thispagestyle{empty}
+
+\vbox to 1truein{}
+
+\centerline{GRAPH PARTITIONING}
+
+\vskip 150pt
+
+\centerline{BY}
+\vskip 10pt
+
+\centerline{ZHICHENG ZHU}
+\vskip 10pt
+
+\centerline{B.S., Some School, Year}
+\centerline{M.S., Some School, Year}
+
+\vskip 200pt
+
+\centerline{THESIS}
+\vskip 10pt
+
+\centerline{Submitted in partial fulfillment of the requirements for}
+\centerline{the degree of Master of Science in Computer Science}
+\centerline{in the Graduate School of}
+\centerline{Binghamton University}
+\centerline{State University of New York}
+\centerline{2013}
+
+\newpage
+
+\thispagestyle{empty}
+
+\vbox to 8.0truein{}
+
+\centerline{\copyright\ Copyright by Zhicheng Zhu, 2013}
+
+\
+
+\centerline{All Rights Reserved}
+
+\newpage
+
+{\baselineskip = 10pt
+
+\vbox to 2.0truein{}
+
+
+\centerline{Accepted in partial fulfillment of the requirements for}
+\centerline{the degree of Master of Science in Computer Science}
+\centerline{in the Graduate School of}
+\centerline{Binghamton University}
+\centerline{State University of New York}
+\centerline{Year}
+\vskip 60pt
+
+\centerline{December 2nd, 2013}
+\vskip 70pt
+
+\centerline{Patrick H. Madden, Chair and Faculty Advisor}
+\centerline{Department of Computer Science, Binghamton University}
+\vskip 50pt
+
+\centerline{Timothy Normand Miller, Member}
+\centerline{Department of Computer Science, Binghamton University}
+\vskip 50pt
+
+% \centerline{Committee Person 2, Member}
+% \centerline{Department of Mathematical Sciences, Binghamton University}
+% \vskip 50pt
+
+% \centerline{Committee Person 3, Outside Examiner}
+% \centerline{Location of Outside Examiner}
+
+
+}
+
+\newpage
+
+\include{abstract}
+
+\newpage
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Changes page numbers to regular numbers, resets the counter
+\mainmatter
+
+% This gives 11pt font with 20pt spacing, text from here should be double spaced
+\fontsize{11}{20pt} \selectfont  
+
+% \include puts in the .tex file with the given name
+% make sure that these files don't have any preamble material
+\newchapter{Introduction}{introduction}
+% this chapter has sample text for the bibliography
+% just delete it and replace with your own
+\newchapter{Graph Partition}{chapter1}
+\newchapter{Hmetis}{chapter2}
+\newchapter{Multigrid-based algorithm for circuit clustering}{chapter3}
+\newchapter{Two ways to combine a new cluster algorithm and hemtis}{chapter4}
+\newchapter{Experiments and analysis}{chapter5}
+\newchapter{Conclusions and Future Work}{chapter6}
+
+
+% add a new chapter without a chapter # for the references
+\addcontentsline{toc}{chapter}{Bibliography} 
+
+% bibs need to be single-spaced
+
+\fontsize{11}{11pt} \selectfont
+
+% specifies the style for the bibliography and inputs the
+% bibtex file references.bib for the bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+\end{document}
